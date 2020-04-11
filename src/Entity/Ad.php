@@ -135,9 +135,9 @@ class Ad
             }, $resultat);
 
             $notAvailableDays = array_merge($notAvailableDays, $days);
-
-            return $notAvailableDays;
         }
+
+        return $notAvailableDays;
     }
 
     public function getId(): ?int
