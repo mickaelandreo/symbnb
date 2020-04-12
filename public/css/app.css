@@ -6,7 +6,7 @@ div.ad-title{
     padding: 2em;
     background-size: cover;
     background-position: center center;
-} 
+}
 
 div.ad-title h1, div.ad-title p, div.carousel-caption {
     color: white;
@@ -32,4 +32,8 @@ div.ad-title h1, div.ad-title p, div.carousel-caption {
 
 .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
     color: firebrick !important;
+}
+
+span.rating i {
+    color: goldenrod;
 }
