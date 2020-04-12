@@ -4,7 +4,7 @@
 		<div class="card header text-center">
 			{{ ad.rooms }}
 			chambres
-			<strong>{{ ad.price }}&euro; / nuit</strong><br>
+			<strong>{{ ad.price|number_format(2, ',', ' ') }}&euro; / nuit</strong><br>
 			{% if ad.comments|length > 0 %}
 				{% include "partials/rating.html.twig" with {'rating': ad.avgRatings} %}
 			{% else %}
@@ -17,13 +17,13 @@
 		<div class="card-body">
 			<h4 class="card-title">
 				<a href="{{ url }}">
-					{{ ad.title }}
+					{% include "partials/maxCaract.html.twig" with {'field': ad.title, 'length': 20} %}					
 				</a>
 			</h4>
 			<p class="card-text">
-				{{ ad.introduction }}
+				{% include "partials/maxCaract.html.twig" with {'field': ad.introduction, 'length': 100} %}
 			</p>
-			<a href="{{ url }}" class="btn btn-secondary">En savoir plus</a>
+			<a href="{{ url }}" class="btn btn-primary float-right">En savoir plus</a>
 			{% if app.user and app.user == ad.author %}
 				<a href="{{ path('ads_edit', {'slug': ad.slug}) }}" class="btn btn-secondary">Modifier</a>
 			{% endif %}

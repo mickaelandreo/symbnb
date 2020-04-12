@@ -1,0 +1,5 @@
+{% if field|length > length %}
+	{{ field|slice(0, length) }}...
+{% else %}
+	{{ field }}
+{% endif %}
