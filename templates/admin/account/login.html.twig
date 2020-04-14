@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Connexion à l'administration</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/fontawesome-all.min.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+            } 
+
+            .card {
+                margin-top: 10%;
+            }
+
+        </style>
+	</head>
+	<body>
+		<div class="col-md-4">
+			<div class="card bg-light">
+				<div class="card-header text-center">
+					<h4 class="card-title">
+						<i class="fas fa-lock"></i>
+						Connexion à l'administration
+					</h4>
+				</div>
+				<div class="card-body">
+                    {% if hasError %}
+                        <div class="alert alert-warning">
+                            <p class="text-center">
+                                Vos identifiants sont incorrects ou vous ne disposez pas des droits nécessaires pour accéder à l'administration.
+                            </p>
+                        </div>
+                    {% endif %}
+					<form method="post">
+						<div class="form-group">
+							<label for="_username">E-mail</label>
+							<input type="email" class="form-control" placeholder="Adresse e-mail" name="_username" value="{{ username }}">
+						</div>
+						<div class="form-group">
+							<label for="_password">Mot de passe</label>
+							<input type="password" class="form-control" placeholder="Mot de passe" name="_password">
+						</div>
+						<div class="form-group text-center">
+							<button type="submit" class="btn btn-primary">
+								<i class="fas fa-lock-open"></i>
+								Connexion
+							</button>
+							<a href="{{ path('homepage') }}" class="btn btn-link">
+								<i class="fas fa-arrow-circle-left"></i>
+								Retour au site
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

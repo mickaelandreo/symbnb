@@ -36,7 +36,8 @@ class Booking
      * @Assert\Type("\DateTimeInterface")
      * @Assert\GreaterThan(
      *  "today",
-     *  message = "La date de départ doit être ultérieure à aujourd'hui"
+     *  message = "La date de départ doit être ultérieure à aujourd'hui",
+     *  groups = {"front"}
      * )
      */
     private $startDate;
@@ -68,7 +69,9 @@ class Booking
 
     /**
      * Callback appelé à chaque fois qu'on crée une réservation
+     * 
      * @ORM\PrePersist
+     * @ORM\PreUpdate
      *
      * @return void
      * 

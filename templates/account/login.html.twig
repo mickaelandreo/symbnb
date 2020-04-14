@@ -10,7 +10,7 @@
 			<div class="col-md-3">&nbsp;</div>
 			<div class="col-md-6">
                 <div class="bg-light px-3 py-3">
-                    <h1>Connectez vous</h1>
+                    <h1 class="my-2 text-center" >Connectez vous</h1>
 
                     {% if hasError %}
                         <div class="alert alert-danger">
@@ -28,7 +28,8 @@
                             <input type="password" name="_password" id="password" placeholder="Mot de passe" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success">Connexion</button>
+                            <button type="submit" class="btn btn-success mr-2">Connexion</button>
+                            <a href="{{ path('account_register') }}" class="small">Je n'ai pas encore de compte</a>
                         </div>
                     </form>
                 </div>
