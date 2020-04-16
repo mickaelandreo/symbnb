@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for comment in comments %}
+                {% for comment in pagination.data %}
                     {% set author = comment.author %}
                     <tr>
                         <td>{{ comment.id }}</td>
@@ -46,6 +46,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        {{ pagination.display() }}
     </div>
 
 {% endblock %}
